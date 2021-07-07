@@ -1,7 +1,7 @@
 ﻿
 namespace CalculatorV2GUI
 {
-	partial class Form1
+	partial class GUI
 	{
 		/// <summary>
 		/// Required designer variable.
@@ -36,6 +36,8 @@ namespace CalculatorV2GUI
 			this.panel2 = new System.Windows.Forms.Panel();
 			this.label3 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
+			this.label4 = new System.Windows.Forms.Label();
+			this.degRadModeLabel = new System.Windows.Forms.Label();
 			this.panel1.SuspendLayout();
 			this.panel2.SuspendLayout();
 			this.SuspendLayout();
@@ -106,20 +108,43 @@ namespace CalculatorV2GUI
 			this.label2.TabIndex = 0;
 			this.label2.Text = "Answer:";
 			// 
+			// label4
+			// 
+			this.label4.AutoSize = true;
+			this.label4.Location = new System.Drawing.Point(58, 13);
+			this.label4.Name = "label4";
+			this.label4.Size = new System.Drawing.Size(47, 17);
+			this.label4.TabIndex = 5;
+			this.label4.Text = "Mode:";
+			this.label4.Click += new System.EventHandler(this.label4_Click);
+			// 
+			// degRadModeLabel
+			// 
+			this.degRadModeLabel.AutoSize = true;
+			this.degRadModeLabel.Location = new System.Drawing.Point(111, 13);
+			this.degRadModeLabel.Name = "degRadModeLabel";
+			this.degRadModeLabel.Size = new System.Drawing.Size(38, 17);
+			this.degRadModeLabel.TabIndex = 6;
+			this.degRadModeLabel.Text = "DEG";
+			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(800, 450);
+			this.Controls.Add(this.degRadModeLabel);
+			this.Controls.Add(this.label4);
 			this.Controls.Add(this.panel2);
 			this.Controls.Add(this.panel1);
 			this.Name = "Form1";
-			this.Text = "Form1";
+			this.Text = "CalculatorV2";
+			this.Load += new System.EventHandler(this.Form1_Load);
 			this.panel1.ResumeLayout(false);
 			this.panel1.PerformLayout();
 			this.panel2.ResumeLayout(false);
 			this.panel2.PerformLayout();
 			this.ResumeLayout(false);
+			this.PerformLayout();
 
 		}
 
@@ -132,6 +157,8 @@ namespace CalculatorV2GUI
 		private System.Windows.Forms.Panel panel2;
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.Label label3;
+		private System.Windows.Forms.Label label4;
+		private System.Windows.Forms.Label degRadModeLabel;
 	}
 }
 

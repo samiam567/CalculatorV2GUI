@@ -113,6 +113,8 @@ namespace CalculatorV2GUI
 
                 if (verboseOutput) Console.WriteLine("Recieved: " + rcv);
 
+                
+
                 return rcv;
             }
             catch (SocketException s)

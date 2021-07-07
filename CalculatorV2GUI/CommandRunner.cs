@@ -54,11 +54,11 @@
             {
                 if (verboseCalculator)
                 {
-                    runCommand(Directory.GetCurrentDirectory(), "java -jar CalculatorV2.jar --full-return --verbose-output --socket-server " + port + " csharp", true);
+                    runCommand(Directory.GetCurrentDirectory(), "java -jar CalculatorV2.jar --user-calculator --verbose-output --socket-server " + port + " csharp", true);
                 }
                 else
                 {
-                    runCommand(Directory.GetCurrentDirectory(), "java -jar CalculatorV2.jar --full-return --socket-server " + port + " csharp", true);
+                    runCommand(Directory.GetCurrentDirectory(), "java -jar CalculatorV2.jar --user-calculator --socket-server " + port + " csharp", true);
                 }
             }
 
