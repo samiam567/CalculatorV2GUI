@@ -58,7 +58,7 @@ namespace CalculatorV2GUI
 			for (int i = 0; i < numSpaces; i++) ansStr += " ";
 			ansStr += output;
 
-			label3.Text = ansStr;
+			answerBox.Text = ansStr;
 
 
 			updateDegRadModeIndicator(); //update incase we changed which mode we are in
@@ -104,6 +104,26 @@ namespace CalculatorV2GUI
 
 
 		private void label4_Click(object sender, EventArgs e) {
+
+		}
+
+		private void panel2_Paint(object sender, PaintEventArgs e)
+		{
+			
+		}
+
+		private void answerBox_TextChanged(object sender, EventArgs e)
+		{
+
+		}
+
+		private void degRadModeLabel_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void label2_Click(object sender, EventArgs e)
+		{
 
 		}
 	}

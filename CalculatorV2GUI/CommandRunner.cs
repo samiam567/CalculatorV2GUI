@@ -52,14 +52,7 @@
 
             public void launchCalculator(int port, bool verboseCalculator = false)
             {
-                if (verboseCalculator)
-                {
-                    runCommand(Directory.GetCurrentDirectory(), "java -jar CalculatorV2.jar --user-calculator --verbose-output --socket-server " + port + " csharp", true);
-                }
-                else
-                {
-                    runCommand(Directory.GetCurrentDirectory(), "java -jar CalculatorV2.jar --user-calculator --socket-server " + port + " csharp", true);
-                }
+                runCommand(Directory.GetCurrentDirectory(), "java -jar CalculatorV2.jar --user-calculator" + (verboseCalculator ? " --verbose-output" : "") + " --socket-server " + port + " csharp", true);
             }
 
             public static string queryShellWithCommand(string command, string workingDirectory)

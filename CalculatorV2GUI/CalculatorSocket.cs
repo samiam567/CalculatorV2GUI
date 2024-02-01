@@ -32,7 +32,7 @@ namespace CalculatorV2GUI
             calc.close();
         }
         
-        public CalculatorSocket(int port = 54353, bool verboseCalculator = false)
+        public CalculatorSocket(int port = 54353, bool verboseCalculator = true)
         {
             IPEndPoint serverAddress = new IPEndPoint(GetLocalIPAddress(), port);
 
@@ -44,7 +44,7 @@ namespace CalculatorV2GUI
                 clientSocket.Connect(serverAddress);
                 if (verboseOutput) Console.WriteLine("Connected");
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 if (verboseOutput) Console.WriteLine("No existing server. Launching our own...");
                 commandRunner = new CommandRunner();
