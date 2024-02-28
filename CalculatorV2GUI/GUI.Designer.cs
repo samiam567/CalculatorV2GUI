@@ -29,94 +29,25 @@ namespace CalculatorV2GUI
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.button1 = new System.Windows.Forms.Button();
-			this.inputBox = new System.Windows.Forms.TextBox();
-			this.label1 = new System.Windows.Forms.Label();
-			this.panel1 = new System.Windows.Forms.Panel();
-			this.panel2 = new System.Windows.Forms.Panel();
-			this.label2 = new System.Windows.Forms.Label();
 			this.label4 = new System.Windows.Forms.Label();
 			this.degRadModeLabel = new System.Windows.Forms.Label();
+			this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+			this.inputBox = new System.Windows.Forms.TextBox();
+			this.panel1 = new System.Windows.Forms.Panel();
+			this.calculateButton = new System.Windows.Forms.Button();
+			this.label2 = new System.Windows.Forms.Label();
 			this.answerBox = new System.Windows.Forms.RichTextBox();
+			((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+			this.splitContainer1.Panel1.SuspendLayout();
+			this.splitContainer1.Panel2.SuspendLayout();
+			this.splitContainer1.SuspendLayout();
 			this.panel1.SuspendLayout();
-			this.panel2.SuspendLayout();
 			this.SuspendLayout();
-			// 
-			// button1
-			// 
-			this.button1.Location = new System.Drawing.Point(404, 164);
-			this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(336, 69);
-			this.button1.TabIndex = 0;
-			this.button1.Text = "Calculate";
-			this.button1.UseVisualStyleBackColor = true;
-			this.button1.Click += new System.EventHandler(this.button1_Click);
-			// 
-			// inputBox
-			// 
-			this.inputBox.Location = new System.Drawing.Point(69, 98);
-			this.inputBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-			this.inputBox.Name = "inputBox";
-			this.inputBox.Size = new System.Drawing.Size(961, 31);
-			this.inputBox.TabIndex = 1;
-			this.inputBox.TextChanged += new System.EventHandler(this.inputBox_TextChanged);
-			this.inputBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.inputBox_KeyDown);
-			// 
-			// label1
-			// 
-			this.label1.AutoSize = true;
-			this.label1.Location = new System.Drawing.Point(64, 47);
-			this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(323, 25);
-			this.label1.TabIndex = 2;
-			this.label1.Text = "Type what you want to Calculate";
-			this.label1.Click += new System.EventHandler(this.label1_Click);
-			// 
-			// panel1
-			// 
-			this.panel1.Controls.Add(this.inputBox);
-			this.panel1.Controls.Add(this.button1);
-			this.panel1.Controls.Add(this.label1);
-			this.panel1.Location = new System.Drawing.Point(18, 50);
-			this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(1162, 261);
-			this.panel1.TabIndex = 3;
-			// 
-			// panel2
-			// 
-			this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.panel2.AutoSize = true;
-			this.panel2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-			this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.panel2.Controls.Add(this.answerBox);
-			this.panel2.Controls.Add(this.label2);
-			this.panel2.Location = new System.Drawing.Point(13, 321);
-			this.panel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-			this.panel2.Name = "panel2";
-			this.panel2.Padding = new System.Windows.Forms.Padding(10);
-			this.panel2.Size = new System.Drawing.Size(1165, 369);
-			this.panel2.TabIndex = 4;
-			this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
-			// 
-			// label2
-			// 
-			this.label2.AutoSize = true;
-			this.label2.Location = new System.Drawing.Point(14, 10);
-			this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(82, 25);
-			this.label2.TabIndex = 0;
-			this.label2.Text = "Output:";
-			this.label2.Click += new System.EventHandler(this.label2_Click);
 			// 
 			// label4
 			// 
 			this.label4.AutoSize = true;
-			this.label4.Location = new System.Drawing.Point(13, 20);
+			this.label4.Location = new System.Drawing.Point(32, 17);
 			this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.label4.Name = "label4";
 			this.label4.Size = new System.Drawing.Size(72, 25);
@@ -127,7 +58,7 @@ namespace CalculatorV2GUI
 			// degRadModeLabel
 			// 
 			this.degRadModeLabel.AutoSize = true;
-			this.degRadModeLabel.Location = new System.Drawing.Point(93, 20);
+			this.degRadModeLabel.Location = new System.Drawing.Point(112, 17);
 			this.degRadModeLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.degRadModeLabel.Name = "degRadModeLabel";
 			this.degRadModeLabel.Size = new System.Drawing.Size(57, 25);
@@ -135,51 +66,131 @@ namespace CalculatorV2GUI
 			this.degRadModeLabel.Text = "DEG";
 			this.degRadModeLabel.Click += new System.EventHandler(this.degRadModeLabel_Click);
 			// 
+			// splitContainer1
+			// 
+			this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.splitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
+			this.splitContainer1.IsSplitterFixed = true;
+			this.splitContainer1.Location = new System.Drawing.Point(0, 0);
+			this.splitContainer1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.splitContainer1.Name = "splitContainer1";
+			this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
+			// 
+			// splitContainer1.Panel1
+			// 
+			this.splitContainer1.Panel1.Controls.Add(this.inputBox);
+			this.splitContainer1.Panel1.Controls.Add(this.panel1);
+			this.splitContainer1.Panel1.Controls.Add(this.label2);
+			this.splitContainer1.Panel1.Controls.Add(this.label4);
+			this.splitContainer1.Panel1.Controls.Add(this.degRadModeLabel);
+			this.splitContainer1.Panel1.Padding = new System.Windows.Forms.Padding(20, 0, 20, 10);
+			this.splitContainer1.Panel1MinSize = 50;
+			// 
+			// splitContainer1.Panel2
+			// 
+			this.splitContainer1.Panel2.Controls.Add(this.answerBox);
+			this.splitContainer1.Panel2.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
+			this.splitContainer1.Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel2_Paint);
+			this.splitContainer1.Size = new System.Drawing.Size(1150, 756);
+			this.splitContainer1.SplitterDistance = 150;
+			this.splitContainer1.TabIndex = 7;
+			this.splitContainer1.SplitterMoved += new System.Windows.Forms.SplitterEventHandler(this.splitContainer1_SplitterMoved);
+			// 
+			// inputBox
+			// 
+			this.inputBox.Dock = System.Windows.Forms.DockStyle.Bottom;
+			this.inputBox.Location = new System.Drawing.Point(20, -18);
+			this.inputBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.inputBox.MinimumSize = new System.Drawing.Size(100, 20);
+			this.inputBox.Name = "inputBox";
+			this.inputBox.Size = new System.Drawing.Size(1110, 31);
+			this.inputBox.TabIndex = 14;
+			this.inputBox.TextChanged += new System.EventHandler(this.inputBox_TextChanged);
+			this.inputBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.inputBox_KeyDown);
+			// 
+			// panel1
+			// 
+			this.panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+			this.panel1.Controls.Add(this.calculateButton);
+			this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+			this.panel1.Location = new System.Drawing.Point(20, 13);
+			this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.panel1.Name = "panel1";
+			this.panel1.Padding = new System.Windows.Forms.Padding(200, 19, 200, 19);
+			this.panel1.Size = new System.Drawing.Size(1110, 127);
+			this.panel1.TabIndex = 12;
+			// 
+			// calculateButton
+			// 
+			this.calculateButton.AutoSize = true;
+			this.calculateButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+			this.calculateButton.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+			this.calculateButton.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.calculateButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
+			this.calculateButton.Location = new System.Drawing.Point(200, 19);
+			this.calculateButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.calculateButton.MinimumSize = new System.Drawing.Size(200, 100);
+			this.calculateButton.Name = "calculateButton";
+			this.calculateButton.Size = new System.Drawing.Size(710, 100);
+			this.calculateButton.TabIndex = 11;
+			this.calculateButton.Text = "Calculate";
+			this.calculateButton.UseVisualStyleBackColor = false;
+			this.calculateButton.Click += new System.EventHandler(this.calculateButton_Click);
+			// 
+			// label2
+			// 
+			this.label2.AccessibleRole = System.Windows.Forms.AccessibleRole.TitleBar;
+			this.label2.AutoSize = true;
+			this.label2.Location = new System.Drawing.Point(24, 75);
+			this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+			this.label2.Name = "label2";
+			this.label2.Size = new System.Drawing.Size(325, 25);
+			this.label2.TabIndex = 9;
+			this.label2.Text = "Type what you want to calculate:";
+			this.label2.Click += new System.EventHandler(this.label2_Click_1);
+			// 
 			// answerBox
 			// 
-			this.answerBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-			this.answerBox.Cursor = System.Windows.Forms.Cursors.Default;
-			this.answerBox.Location = new System.Drawing.Point(34, 52);
+			this.answerBox.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.answerBox.Location = new System.Drawing.Point(20, 0);
+			this.answerBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
 			this.answerBox.Name = "answerBox";
-			this.answerBox.Size = new System.Drawing.Size(1116, 302);
-			this.answerBox.TabIndex = 2;
+			this.answerBox.Size = new System.Drawing.Size(1110, 602);
+			this.answerBox.TabIndex = 0;
 			this.answerBox.Text = "";
-			this.answerBox.TextChanged += new System.EventHandler(this.answerBox_TextChanged);
+			this.answerBox.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
 			// 
 			// GUI
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.AutoSize = true;
-			this.ClientSize = new System.Drawing.Size(1218, 709);
-			this.Controls.Add(this.degRadModeLabel);
-			this.Controls.Add(this.label4);
-			this.Controls.Add(this.panel2);
-			this.Controls.Add(this.panel1);
-			this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+			this.ClientSize = new System.Drawing.Size(1150, 756);
+			this.Controls.Add(this.splitContainer1);
+			this.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
 			this.Name = "GUI";
 			this.Text = "CalculatorV2";
 			this.Load += new System.EventHandler(this.Form1_Load);
+			this.splitContainer1.Panel1.ResumeLayout(false);
+			this.splitContainer1.Panel1.PerformLayout();
+			this.splitContainer1.Panel2.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+			this.splitContainer1.ResumeLayout(false);
 			this.panel1.ResumeLayout(false);
 			this.panel1.PerformLayout();
-			this.panel2.ResumeLayout(false);
-			this.panel2.PerformLayout();
 			this.ResumeLayout(false);
-			this.PerformLayout();
 
 		}
 
 		#endregion
-
-		private System.Windows.Forms.Button button1;
-		private System.Windows.Forms.TextBox inputBox;
-		private System.Windows.Forms.Label label1;
-		private System.Windows.Forms.Panel panel1;
-		private System.Windows.Forms.Panel panel2;
-		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.Label label4;
 		private System.Windows.Forms.Label degRadModeLabel;
+		private System.Windows.Forms.SplitContainer splitContainer1;
 		private System.Windows.Forms.RichTextBox answerBox;
+		private System.Windows.Forms.Label label2;
+		private System.Windows.Forms.Panel panel1;
+		private System.Windows.Forms.Button calculateButton;
+		private System.Windows.Forms.TextBox inputBox;
 	}
 }
 

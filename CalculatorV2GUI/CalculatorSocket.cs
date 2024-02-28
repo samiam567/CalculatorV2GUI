@@ -2,6 +2,9 @@
 using System.Net;
 using System;
 using CalculatorV2GUI.CsCalculatorV2;
+using System.Text;
+using System.Windows.Forms;
+using System.Threading.Tasks;
 
 namespace CalculatorV2GUI
 {
@@ -95,21 +98,16 @@ namespace CalculatorV2GUI
             {
 
                 // Sending
-                int toSendLen = System.Text.Encoding.ASCII.GetByteCount(toSend);
-                byte[] toSendBytes = System.Text.Encoding.ASCII.GetBytes(toSend);
-                byte[] toSendLenBytes = System.BitConverter.GetBytes(toSendLen);
-                clientSocket.Send(toSendLenBytes);
-                clientSocket.Send(toSendBytes);
+                var messageBytes = Encoding.UTF8.GetBytes(toSend + "\n");
+                clientSocket.Send(messageBytes);
+                Console.WriteLine($"Socket client sent message: \"{toSend}\"");
 
                 if (verboseOutput) Console.WriteLine("sent. Waiting for response from calculator");
 
                 // Receiving
-                byte[] rcvLenBytes = new byte[4];
-                clientSocket.Receive(rcvLenBytes);
-                int rcvLen = System.BitConverter.ToInt32(rcvLenBytes, 0);
-                byte[] rcvBytes = new byte[rcvLen];
-                clientSocket.Receive(rcvBytes);
-                String rcv = System.Text.Encoding.ASCII.GetString(rcvBytes);
+                var buffer = new byte[8388608];
+                var received = clientSocket.Receive(buffer);
+                var rcv = Encoding.UTF8.GetString(buffer, 0, received);
 
                 if (verboseOutput) Console.WriteLine("Recieved: " + rcv);
 

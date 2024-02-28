@@ -13,7 +13,7 @@ namespace CalculatorV2GUI
 	
 	public partial class GUI : Form
 	{
-		CalculatorSocket calc = new CalculatorSocket(12434);
+		CalculatorSocket calc = new CalculatorSocket(12435);
 		Stack<string> inputHistory = new Stack<string>();
 
 		public GUI()
@@ -28,7 +28,7 @@ namespace CalculatorV2GUI
 			degRadModeLabel.Text = calc.calculate("/getDegRadMode");
 		}
 
-		private void button1_Click(object sender, EventArgs e) {
+		private void calculateButton_Click(object sender, EventArgs e) {
 			Console.WriteLine("button 1 clicked");
 			Console.WriteLine("Input: " + inputBox.Text);
 
@@ -66,7 +66,7 @@ namespace CalculatorV2GUI
 
 		private void inputBox_TextChanged(object sender, EventArgs e) {
 			try {
-				ActiveForm.AcceptButton = button1; // Button1 will be 'clicked' when user presses return
+				ActiveForm.AcceptButton = calculateButton; // Button1 will be 'clicked' when user presses return
 			}catch(NullReferenceException n) {
 				Console.WriteLine(n.ToString());
 			}
@@ -123,6 +123,36 @@ namespace CalculatorV2GUI
 		}
 
 		private void label2_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void panel1_Paint(object sender, PaintEventArgs e)
+		{
+
+		}
+
+		private void splitContainer1_SplitterMoved(object sender, SplitterEventArgs e)
+		{
+
+		}
+
+		private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
+		{
+
+		}
+
+		private void richTextBox1_TextChanged(object sender, EventArgs e)
+		{
+
+		}
+
+		private void label2_Click_1(object sender, EventArgs e)
+		{
+
+		}
+
+		private void inputBox_TextChanged_1(object sender, EventArgs e)
 		{
 
 		}
