@@ -94,6 +94,7 @@ namespace CalculatorV2GUI
         {
             if (verboseOutput) Console.WriteLine("Attempting to send...");
 
+            toSend = toSend.Replace("\n", "");
             try
             {
 
@@ -105,15 +106,23 @@ namespace CalculatorV2GUI
                 if (verboseOutput) Console.WriteLine("sent. Waiting for response from calculator");
 
                 // Receiving
-                var buffer = new byte[8388608];
-                var received = clientSocket.Receive(buffer);
-                var rcv = Encoding.UTF8.GetString(buffer, 0, received);
+                String output = "";
+                int received = 1;
+                while (received != 0 && ! output.Contains("~~~~"))
+                {
+                    var buffer = new byte[16777216];
+                    received = clientSocket.Receive(buffer);
+                    var rcv = Encoding.UTF8.GetString(buffer, 0, received);
+                    output += rcv;
+                    if (verboseOutput) Console.WriteLine("Recieved: " + rcv);
+                }
+                output = output.Replace("~~~~","");
 
-                if (verboseOutput) Console.WriteLine("Recieved: " + rcv);
+               if (output.EndsWith("\n")) output = output.Substring(0, output.Length - 2);
 
                 
 
-                return rcv;
+                return output;
             }
             catch (SocketException s)
             {
